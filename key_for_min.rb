@@ -7,6 +7,5 @@
 #end
 
 def key_for_min_value(hash)
-  values = hash.values
-  hash.keys[values.index(values.min).to_i]
+  hash.inject { |m,a| m[1] > a[1] ? a : m }[0] unless hash.empty?
 end
